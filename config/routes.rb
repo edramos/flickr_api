@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'pages/photos_get_info'
   get 'pages/search'
   root 'pages#index'
 
