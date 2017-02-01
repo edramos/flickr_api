@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+ruby '2.3.1'
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -35,9 +36,28 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Bootstrap framework
+gem 'bootstrap-sass', '~> 3.3.6'
+# Use React as the JavaScript library
+gem 'react-rails', '~> 1.10'
+# Flickr library. Read more: https://github.com/hanklords/flickraw
+gem 'flickraw', '~> 0.9.9'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
+
+  # RSpec for testing
+  gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
+  # Brings back 'assigns' and 'assert_templates' to RSpecs in Rails 5
+  gem 'rails-controller-testing', '~> 1.0', '>= 1.0.1'
+  # RSpec progress bar formatter
+  gem 'fuubar', '~> 2.2'
+
+  # Capybara for Acceptance Testing
+  gem 'capybara', '~> 2.12'
+  # Headless driver which integrates Capybara with PhantomJS
+  gem 'poltergeist', '~> 1.13'
 end
 
 group :development do
