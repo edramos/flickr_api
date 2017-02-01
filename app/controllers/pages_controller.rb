@@ -34,7 +34,16 @@ class PagesController < ApplicationController
     render json: @photo_info
   end
 
+  # GET /pages/search
   def search
+    # Get the string for the search
+    args = {tags: params[:q]}
+    # Get matches from Flickr API,
+    # more info: https://www.flickr.com/services/api/flickr.photos.search.html
+    #
+    result = flickr.photos.search args
+
+    @images = set_list(result)
   end
 
 
