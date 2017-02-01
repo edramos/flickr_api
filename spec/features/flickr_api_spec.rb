@@ -8,7 +8,7 @@ RSpec.feature 'Flickr API Management' do
     # Expect to see the Search Text Input
     expect(page).to have_xpath("//input[@placeholder='Photos, people, or groups']")
     # Expect to see photos from the flickr.photos.getRecent
-    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..10)
+    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..20)
     # Save a screenshot of page
     #save_screenshot
   end
@@ -23,7 +23,7 @@ RSpec.feature 'Flickr API Management' do
     # Expect go to the Search page
     expect(current_path).to eq('/pages/search')
     # Expect to see photos from the search result
-    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..10)
+    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..20)
     # Save a screenshot of page
     #save_screenshot
   end
@@ -43,7 +43,7 @@ RSpec.feature 'Flickr API Management' do
     # Go to the Search page with a search with matches
     visit 'pages/search?q=Peru'
     # Expect to see photos from the search result
-    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..10)
+    expect(page).to have_xpath("//img[contains(@alt,'API')]", :between => 1..20)
     # Click in the first search result (photo) and open it in a new tab
     new_photo_window = window_opened_by { first("img[alt='API']").click }
     # In the new tab
