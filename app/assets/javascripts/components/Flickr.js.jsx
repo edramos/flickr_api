@@ -9,6 +9,12 @@ const Flickr = React.createClass({
     }
   },
 
+  _updateList: function (list) {
+    // When the user performances a Search, the new ones matches are updated
+    // to this state and it triggers a re-render in the ImageCards
+    this.setState({ images: list });
+  },
+
   render: function () {
     // The first call to Flickr API gets the basic info for photos,
     // one is the 'src' and I just it in order to show the image in the ImageCard,
